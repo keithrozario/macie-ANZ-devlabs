@@ -13,6 +13,8 @@ bucket_name = ssm_client.get_parameter(
     Name='MacieDevlabBucketName'
 )['Parameter']['Value']
 bucket_location = s3_client.get_bucket_location(Bucket=bucket_name)['LocationConstraint']
+if bucket_location is None:
+    bucket_location = 'us-east-1'
 print(f"Your Macie Bucket name is {bucket_name} in the {bucket_location} region")
 
 
