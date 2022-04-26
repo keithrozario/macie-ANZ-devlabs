@@ -35,3 +35,12 @@ Resources:
       ImageId: ubuntu-18.04-x86_64
       InstanceType: t2.micro
       Name: Macie DevLab (Level 100)
+
+  Cloud9InstanceAL2:
+    Type: AWS::Cloud9::EnvironmentEC2
+    Properties: 
+      AutomaticStopTimeMinutes: 20160
+      Description: Macie DevLab
+      ImageId: amazonlinux-2-x86_64
+      InstanceType: t2.micro
+      Name: Macie (Level 100)
