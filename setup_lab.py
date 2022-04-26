@@ -36,12 +36,13 @@ bucket_location = s3_client.get_bucket_location(Bucket=bucket_name)['LocationCon
 if bucket_location is None:
     bucket_location = 'us-east-1'
 print(f"Bucket with sensitive data is {color(bucket_name)} in the {color(bucket_location,color='orange')} region")
+macie_console_link = f"https://us-east-1.console.aws.amazon.com/macie/home?region={bucket_location}"
 
 
 list_files = os.listdir(sensitive_data_folder)
 for file_name in list_files:
     response = s3_client.upload_file(f"./{sensitive_data_folder}/{file_name}", bucket_name, file_name)
-print(f"Uploaded sensitive data to {bucket_name} bucket")
+print(f"Uploaded sensitive data to {color(bucket_name)} bucket")
 
 
 try:
@@ -50,5 +51,11 @@ try:
 except macie_client.exceptions.from_code('AccessDeniedException') as e:
     print(e.response['Error']['Message'])
 macie_client.enable_macie()
-print("New configuration of Macie enabled\n\n")
-print(f"🚀 {color('You are ready to go',color='green')} 🚀")
+response = macie_client.get_macie_session()
+if response['status'] == 'ENABLED':
+    print("Macie enabled!\n\n")
+    print(f"🚀 {color('You are ready to go',color='green')} 🚀")
+    print(f"Click here to continue to Macie: {color(macie_console_link, color='cyan')}")
+    print("\n")
+else:
+    print("Error enabling Macie, please check with the lab organizer")
