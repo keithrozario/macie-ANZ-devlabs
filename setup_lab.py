@@ -50,5 +50,5 @@ try:
 except macie_client.exceptions.from_code('AccessDeniedException') as e:
     print(e.response['Error']['Message'])
 macie_client.enable_macie()
-print(f"New configuration of Macie enabled")
-print(f"\n\n 🚀 {color('You\'re ready to go',color='green')} 🚀")
+print("New configuration of Macie enabled\n\n")
+print(f"🚀 {color('You are ready to go',color='green')} 🚀")
