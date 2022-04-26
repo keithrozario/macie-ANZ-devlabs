@@ -52,7 +52,7 @@ except macie_client.exceptions.from_code('AccessDeniedException') as e:
     print(e.response['Error']['Message'])
 macie_client.enable_macie()
 response = macie_client.get_macie_session()
-response = macie_client.create_custom_data_identifier(
+macie_client.create_custom_data_identifier(
     description='Passport number of Gotham Citizens',
     keywords=[
         'passport',
@@ -67,7 +67,6 @@ response = macie_client.create_custom_data_identifier(
         },
     ]
 )
-
 
 
 if response['status'] == 'ENABLED':
