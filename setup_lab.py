@@ -52,10 +52,28 @@ except macie_client.exceptions.from_code('AccessDeniedException') as e:
     print(e.response['Error']['Message'])
 macie_client.enable_macie()
 response = macie_client.get_macie_session()
+response = macie_client.create_custom_data_identifier(
+    description='Passport number of Gotham Citizens',
+    keywords=[
+        'passport',
+    ],
+    maximumMatchDistance=50,
+    name='Gotham Passport',
+    regex='[ABCDEF]\\d{7}[A-Z]',
+    severityLevels=[
+        {
+            'occurrencesThreshold': 1,
+            'severity': 'HIGH'
+        },
+    ]
+)
+
+
+
 if response['status'] == 'ENABLED':
     print("Macie enabled!\n\n")
     print(f"🚀 {color('You are ready to go',color='green')} 🚀")
-    print(f"Click here to continue to Macie: {color(macie_console_link, color='cyan')}")
-    print("\n")
+    print(f"Click this link, and then click open to continue to Macie: {color(macie_console_link, color='cyan')}")
+    print("\n\n")
 else:
     print("Error enabling Macie, please check with the lab organizer")
