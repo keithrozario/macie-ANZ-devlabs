@@ -34,4 +34,4 @@ Resources:
       Description: Macie DevLab
       ImageId: amazonlinux-2-x86_64
       InstanceType: t2.micro
-      Name: Macie (Level 100)
+      Name: Macie DevLab (Level 100)
