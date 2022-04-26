@@ -10,18 +10,18 @@ s3_client = boto3.client('s3')
 macie_client = boto3.client('macie2')
 
 bucket_name = ssm_client.get_parameter(
-    Name='MacieDevlabBucketName'
+    Name=bucket_name_parameter
 )['Parameter']['Value']
 bucket_location = s3_client.get_bucket_location(Bucket=bucket_name)['LocationConstraint']
 if bucket_location is None:
     bucket_location = 'us-east-1'
-print(f"Your Macie Bucket name is {bucket_name} in the {bucket_location} region")
+print(f"Bucket with sensitive data is {bucket_name} in the {bucket_location} region")
 
 
 list_files = os.listdir(sensitive_data_folder)
 for file_name in list_files:
     response = s3_client.upload_file(f"./{sensitive_data_folder}/{file_name}", bucket_name, file_name)
-print(f"Uploaded sensitive data to {bucket_name}")
+print(f"Uploaded sensitive data to {bucket_name} bucket")
 
 try:
     macie_client.disable_macie()
