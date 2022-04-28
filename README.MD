@@ -2,37 +2,39 @@
 
 ## Introduction
 
-In this lab, we will use Amazon Macie to detect sensitive data inside objects of an S3 bucket. The lab starts off with an S3 bucket populated with a test data, participants will then configure Macie and execute a Macie Job to analyze all objects in the bucket. Finally participants can review the findings from Macie against the source data.
+In this lab, we will use Amazon Macie to detect sensitive data inside our AWS Account. Macie applies machine learning and pattern matching techniques to identify and alert you to sensitive data, such as personally identifiable information (PII). 
 
-This lab is set to Level 100, and participants are not required to specific knowledge of AWS. The lab will take ~10-15 minutes to complete.
+This lab is set to Level 100, and participants are **not required** to have any specific knowledge of AWS. The lab will take ~10-15 minutes to complete.
 
 ## Setup Logging into Cloud9
 
 Before we begin, we'll need to setup our lab to ensure we have an S3 bucket with the right test data. To do this, we'll use AWS Cloud9.
 
-AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. From our AWS Cloud9 instance we'll run a simple script that will setup our environment. From the AWS Console, search for Cloud9 in the AWS Console and Click on Cloud9.
+AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write and run code with just a browser. All code required to setup the lab is prepared, participants are only required to run the scripts in Cloud9.
 
+To access Cloud9 search for `Cloud9` in the AWS Console and Click on Cloud9.
 ![Cloud9](images/Cloud9.jpg)
 
-Once in the Cloud9 service select the Cloud9 environment that should already be pre-built for you, and click the Open IDE button for you to enter the IDE
+Then select the Cloud9 environment named `Macie Devlab (Level 100), and click the Open IDE button for you to enter the IDE
 
 ![Open IDE](images/step2-open-cloud9-ide.jpg)
 
 ## Execute the startup script
 
-Once inside Cloud9, we can begin the process of setting up our labs. Copy and paste the following code into the terminal of your Cloud9IDE (the terminal is bottom right of your screen), hit enter to execute the script, the script will take 10-15 seconds to execute.
+Once inside Cloud9, we can begin the process of setting up our labs. 
 
+Copy and paste the following code into the terminal of your Cloud9IDE (the terminal is at the bottom right of your screen), hit `enter` to execute the script.
 
     cd ~/environment && \
     rm -rf macie-ANZ-devlabs && \
-    git clone https://github.com/keithrozario/macie-ANZ-devlabs.git && \
+    git clone https://github.com/keithrozario/macie-ANZ-devlabs.git --quite && \
     cd macie-ANZ-devlabs && \
     pip3 install boto3 --quiet && \
     python3 setup_lab.py && \
     cd ~/environment
 
 
-Once complete you should see a screen as below:
+Once complete you should see a screen like below:
 
 ![Terminal](images/step3-terminal-output.png)
 

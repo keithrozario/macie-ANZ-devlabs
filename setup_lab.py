@@ -35,19 +35,19 @@ bucket_name = ssm_client.get_parameter(
 bucket_location = s3_client.get_bucket_location(Bucket=bucket_name)['LocationConstraint']
 if bucket_location is None:
     bucket_location = 'us-east-1'
-print(f"Bucket with sensitive data is {color(bucket_name)} in the {color(bucket_location,color='orange')} region")
+print(f"Bucket with test data is {color(bucket_name)} in the {color(bucket_location,color='orange')} region")
 macie_console_link = f"https://{bucket_location}.console.aws.amazon.com/macie/home?region={bucket_location}"
 
 
 list_files = os.listdir(sensitive_data_folder)
 for file_name in list_files:
     response = s3_client.upload_file(f"./{sensitive_data_folder}/{file_name}", bucket_name, file_name)
-print(f"Uploaded sensitive data to {color(bucket_name)} bucket")
+print(f"Uploaded test data to {color(bucket_name)} bucket")
 
 
 try:
     macie_client.disable_macie()
-    print("Disabled Macie to remove previous findings")
+    print("Disabled installation of Macie from previous Lab Participant")
 except macie_client.exceptions.from_code('AccessDeniedException') as e:
     print(e.response['Error']['Message'])
 macie_client.enable_macie()
