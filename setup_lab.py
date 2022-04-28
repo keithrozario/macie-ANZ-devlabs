@@ -36,7 +36,7 @@ bucket_location = s3_client.get_bucket_location(Bucket=bucket_name)['LocationCon
 if bucket_location is None:
     bucket_location = 'us-east-1'
 print(f"Bucket with sensitive data is {color(bucket_name)} in the {color(bucket_location,color='orange')} region")
-macie_console_link = f"https://us-east-1.console.aws.amazon.com/macie/home?region={bucket_location}"
+macie_console_link = f"https://{bucket_location}.console.aws.amazon.com/macie/home?region={bucket_location}"
 
 
 list_files = os.listdir(sensitive_data_folder)
