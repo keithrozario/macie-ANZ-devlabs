@@ -36,7 +36,9 @@ Once complete you should see a screen as below:
 
 ![Terminal](images/step3-terminal-output.png)
 
-Congratulations, you're all done setting up the lab. Now we can move on to running a Macie job on our data. You can click on the link that should be present in your terminal to proceed to Macie. This will open Macie in a new browser tab, which will be useful as we'll come back to Cloud9 later.
+Congratulations, you're all done setting up the lab. You should now have a bucket in S3 prepopulated with test data from this repository (look under `test-data`).
+
+You can click on the link present in your terminal to proceed to Macie. This will open Macie in a new browser tab, which will be useful as we'll come back to Cloud9 later.
 
 ## Running a Macie Job
 
@@ -82,8 +84,9 @@ Congratulations, you've successfully initiated your first Macie Data Discovery J
 
 ## Reviewing Test data
 
-The Macie job will typically 5-10 minutes before completing. While we're waiting, let's use this time to analyze the actual data in the bucket.
+The Macie job will typically 5-10 minutes before completing. While we're waiting, let's use this time to analyze the test data in the bucket.
 
-To do this, go back the Cloud9 IDE, and on the left side of the pane, you can select `macie-ANZ-devlabs/sensitive-data`. Here you can see the files we've uploaded into our bucket for the scan. How many occurrences of sensitive data can you find?
+To do this, go back the Cloud9 IDE, and on the left side of the pane, you can select `macie-ANZ-devlabs/test-data`. Here you can see the files we've uploaded into our bucket for the scan. How many occurrences of sensitive data can you find?
+Cloud9 will be unable to render the .xlsx file, its presence here is merely to demonstrate some of the file formats that Macie can analyze.
 
 ## Reviewing Macie Finding
