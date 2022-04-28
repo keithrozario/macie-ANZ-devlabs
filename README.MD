@@ -86,6 +86,26 @@ Congratulations, you've successfully initiated your first Macie Data Discovery J
 
 The Macie job will typically 5-10 minutes before completing. While we're waiting, let's use this time to analyze the test data in the bucket.
 
-To do this, go back the Cloud9 IDE, and on the left side of the pane, you can select `macie-ANZ-devlabs/test-data`. Here you can see the files we've uploaded into our bucket for the scan. How many occurrences of sensitive data can you find?
+To do this, go back the Cloud9 IDE, and on the left side of the pane, you can select `macie-ANZ-devlabs/test-data`. You can also view the 
 
 ## Reviewing Macie Finding
+
+After about 5-10 minutes, findings should begin to appear in your Macie Console. Click on the findings to learn more about what sensitive data Macie discovered. To view the findings, click on the Findings link in the Macie menu:
+
+![Macie Findings](images/step12-Findings.jpg)
+
+Clicking on each finding gives you an overview (see below), which describes Severity of the finding, and the resource (specific object in a specific bucket) that the finding is for. 
+
+![Macie Findings](images/step13-overview.jpg)
+
+Each finding is for a specific resource (object in S3), and each finding can have multiple occurrences of different types of sensitive data. For instance in this finding we have 10 occurences of credit card data and 8 occurences of names. Clicking on the number we can see the location of those occurences in the object (which page,line,paragraph etc). 
+
+![Macie Findings](images/step14-detail-findings.jpg)
+
+Macie will never publish the actual sensitive data, merely the location of that data. Macie also uses a depth-first search algorithm to populate the job's findings with details about the location of 1–15 occurrences of sensitive data that Macie finds in the console. To access details about the location of as many as 1,000 occurrences of each type of sensitive data in an affected object, you can enable sensitive data discovery result for the findings which unfortunately isn't in scope for todays lab.
+
+## Conclusion
+
+In this lab, we used Macie to analyze test objects in an S3 bucket. We used manage data identifiers together with a custom data identifier based on a regular expression we specified. We then started the Macie Data Discovery Job, and finally reviewed the results.
+
+As next steps, you might want to test Macie in your own environments using the same methods we walked through today, or test Macie with other test data you might think off.
