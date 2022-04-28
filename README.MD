@@ -87,6 +87,5 @@ Congratulations, you've successfully initiated your first Macie Data Discovery J
 The Macie job will typically 5-10 minutes before completing. While we're waiting, let's use this time to analyze the test data in the bucket.
 
 To do this, go back the Cloud9 IDE, and on the left side of the pane, you can select `macie-ANZ-devlabs/test-data`. Here you can see the files we've uploaded into our bucket for the scan. How many occurrences of sensitive data can you find?
-Cloud9 will be unable to render the .xlsx file, its presence here is merely to demonstrate some of the file formats that Macie can analyze.
 
 ## Reviewing Macie Finding
