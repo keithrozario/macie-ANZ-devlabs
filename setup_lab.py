@@ -22,7 +22,7 @@ def color(text: str,color: str='cyan') -> str:
 
 
 bucket_name_parameter = 'MacieDevlabBucketName'
-sensitive_data_folder = 'sensitive-data'
+sensitive_data_folder = 'test-data'
 
 ssm_client = boto3.client('ssm')
 s3_client = boto3.client('s3')
