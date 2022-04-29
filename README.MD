@@ -104,7 +104,9 @@ Each finding is for a specific resource (object in S3), and each finding can hav
 
 ![Macie Findings](images/step14-detail-findings.jpg)
 
-Macie will never publish the actual sensitive data, merely the location of that data. Macie also uses a depth-first search algorithm to populate the job's findings with details about the location of 1–15 occurrences of sensitive data that Macie finds in the console. To access details about the location of as many as 1,000 occurrences of each type of sensitive data in an affected object, you can enable sensitive data discovery result for the findings which unfortunately isn't in scope for todays lab.
+Macie will never publish the actual sensitive data, merely the location of that data. Some test data is also ignored. For example, in the `plastic_order.txt` file there is a credit card number that resulted in no findings. This is because we used a generic number that the credit card companies issue for testing such as this. Macie will explicitly ignore these numbers. For more information you can visit the Macie documentation [here](https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html).
+
+Macie also uses a depth-first search algorithm to populate the job's findings with details about the location of 1–15 occurrences of sensitive data that Macie finds in the console. To access details about the location of as many as 1,000 occurrences of each type of sensitive data in an affected object, you can enable sensitive data discovery result for the findings which unfortunately isn't in scope for todays lab.
 
 ## Conclusion
 
