@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab, we will use Amazon Macie to detect sensitive data inside our AWS Account. Macie applies machine learning and pattern matching techniques to identify and alert you to sensitive data, such as personally identifiable information (PII). 
+In this lab, you will use Amazon Macie to detect sensitive data inside our AWS Account. Macie applies machine learning and pattern matching techniques to identify and alert you to sensitive data, such as personally identifiable information (PII). 
 
-This lab is set to Level 100, and participants are **not required** to have any specific knowledge of AWS. The lab will take ~10-15 minutes to complete.
+This lab is set to Level 100, hence participants are **not required** to have any specific knowledge of AWS. The lab will take ~10-15 minutes to complete.
 
 ## Setup Logging into Cloud9
 
@@ -24,6 +24,8 @@ Then select the Cloud9 environment named `Macie Devlab (Level 100), and click th
 Once inside Cloud9, we can begin the process of setting up our labs. 
 
 Copy and paste the following code into the terminal of your Cloud9IDE (the terminal is at the bottom right of your screen), hit `enter` to execute the script.
+
+*note: will change target github to official awslabs one once created*
 
     cd ~/environment && \
     rm -rf macie-ANZ-devlabs && \
