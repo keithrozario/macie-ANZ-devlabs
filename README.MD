@@ -119,7 +119,7 @@ As next steps, you might want to test Macie in your own environments using the s
 
 # Survey Link
 
-Thank you for participating in this lab. Please leave us feedback to let us know how we did for us to improve for future labs. If the QR code below doesn't work, you can click on the link [here](https://eventbox.dev/survey/0BG8D0H).
+Thank you for participating in this lab. Please leave us feedback to let us know how we did and for us to improve in future labs. If the QR code below doesn't work, you can click on the link [here](https://eventbox.dev/survey/0BG8D0H).
 
 ![https://eventbox.dev/survey/0BG8D0H](images/survey_link.png)
 
