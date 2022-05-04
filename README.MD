@@ -90,7 +90,9 @@ Congratulations, you've successfully initiated your first Macie Data Discovery J
 
 The Macie job will typically 5-10 minutes before completing. While we're waiting, let's use this time to analyze the test data in the bucket.
 
-To do this, go back the Cloud9 IDE, and on the left side of the pane, you can select `macie-ANZ-devlabs/test-data`. You can also view the 
+To do this, go back the Cloud9 IDE, and on the left side of the pane, you can select `macie-ANZ-devlabs/test-data`. You can also view the test data on this repo directly under the `test-data` directory. 
+
+All test data is purely made up and do not reference any real person, phone number of credit card data.
 
 ## Reviewing Macie Finding
 
