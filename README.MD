@@ -115,3 +115,11 @@ Macie also uses a depth-first search algorithm to populate the job's findings wi
 In this lab, we used Macie to analyze test objects in an S3 bucket. We used manage data identifiers together with a custom data identifier based on a regular expression we specified. We then started the Macie Data Discovery Job, and finally reviewed the results.
 
 As next steps, you might want to test Macie in your own environments using the same methods we walked through today, or test Macie with other test data you might think off.
+
+
+# Survey Link
+
+Thank you for participating in this lab. Please leave us feedback to let us know how we did for us to improve for future labs. If the QR code below doesn't work, you can click on the link [here](https://eventbox.dev/survey/0BG8D0H).
+
+![https://eventbox.dev/survey/0BG8D0H](images/survey_link.png)
+
