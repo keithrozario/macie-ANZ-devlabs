@@ -2,10 +2,6 @@ import boto3
 import botocore
 import os
 
-import boto3
-import botocore
-import os
-
 def color(text: str,color: str='cyan') -> str:
     """
     colors the output to terminal -- nicer aesthetic!
